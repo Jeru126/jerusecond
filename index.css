@@ -1,0 +1,247 @@
+:root {
+    --court-blue: #1b3f8b;
+    --court-blue-dark: #12295c;
+    --line-yellow: #f2c230;
+    --ink: #16202b;
+    --muted: #4d5966;
+    --paper: #f4f6f8;
+    --white: #ffffff;
+    --rule: #d5dbe2;
+
+    --font-display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+    --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+
+    --measure: 46rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.7;
+}
+
+/* The page already separates areas with borders, so the
+   plain <hr> lines are hidden to avoid doubled-up rules. */
+hr {
+    display: none;
+}
+
+/* ---------- Header ---------- */
+
+header {
+    background: var(--court-blue);
+    color: var(--white);
+    padding: 3.5rem 1.5rem 2.5rem;
+    border-bottom: 8px solid var(--line-yellow);
+}
+
+header > * {
+    max-width: var(--measure);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(3.25rem, 11vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+}
+
+header p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #dbe5f8;
+}
+
+/* ---------- Navigation ---------- */
+
+nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 0.5rem;
+    padding: 0 1rem;
+}
+
+nav a {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 0.03em;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 0.9rem 1rem 0.75rem;
+    border-bottom: 4px solid transparent;
+    transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+nav a:hover {
+    color: var(--court-blue);
+    border-bottom-color: var(--line-yellow);
+}
+
+nav a:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--court-blue);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* ---------- Main content ---------- */
+
+main {
+    padding: 3rem 1.5rem 4rem;
+}
+
+#about-academics {
+    max-width: var(--measure);
+    margin: 0 auto;
+    background: var(--white);
+    padding: 2.5rem 2.5rem 3rem;
+    border-top: 4px solid var(--court-blue);
+    box-shadow: 0 1px 0 var(--rule);
+}
+
+h2,
+h3,
+h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--court-blue-dark);
+}
+
+h2 {
+    margin: 0 0 1.25rem;
+    font-size: clamp(2.25rem, 6vw, 3.25rem);
+    padding-bottom: 0.6rem;
+    border-bottom: 4px solid var(--line-yellow);
+}
+
+h3 {
+    margin: 2.75rem 0 0.9rem;
+    font-size: 1.85rem;
+}
+
+h4 {
+    margin: 2.75rem 0 0.9rem;
+    font-size: 1.45rem;
+    color: var(--ink);
+}
+
+p {
+    margin: 0 0 1.25rem;
+    max-width: 68ch;
+}
+
+strong {
+    font-weight: 600;
+    color: var(--court-blue-dark);
+}
+
+/* ---------- Lists ---------- */
+
+ul {
+    list-style: none;
+    margin: 0 0 1.5rem;
+    padding: 0;
+}
+
+li {
+    padding: 0.9rem 0 0.9rem 1.25rem;
+    border-top: 1px solid var(--rule);
+    border-left: 4px solid var(--line-yellow);
+    margin-bottom: -1px;
+}
+
+li:last-child {
+    border-bottom: 1px solid var(--rule);
+}
+
+/* ---------- Closing statement ---------- */
+
+#about-academics > p:last-of-type {
+    margin-top: 2.5rem;
+    margin-bottom: 0;
+    padding-left: 1.25rem;
+    border-left: 4px solid var(--court-blue);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--court-blue-dark);
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    background: var(--court-blue-dark);
+    color: #c5d2ec;
+    text-align: center;
+    padding: 1.75rem 1.5rem;
+    font-size: 0.95rem;
+}
+
+footer p {
+    margin: 0 auto;
+    max-width: none;
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 600px) {
+    body {
+        font-size: 1.05rem;
+    }
+
+    header {
+        padding: 2.5rem 1.25rem 2rem;
+    }
+
+    main {
+        padding: 1.5rem 0 2.5rem;
+    }
+
+    #about-academics {
+        padding: 1.75rem 1.25rem 2.25rem;
+    }
+
+    nav {
+        justify-content: flex-start;
+    }
+
+    nav a {
+        padding: 0.75rem 0.6rem 0.6rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}
