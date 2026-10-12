@@ -1,17 +1,17 @@
 :root {
-    --court-blue: #1b3f8b;
-    --court-blue-dark: #12295c;
-    --line-yellow: #f2c230;
-    --ink: #16202b;
-    --muted: #4d5966;
-    --paper: #f4f6f8;
+    --blue: #1b3f8b;
+    --blue-dark: #09233d;
+    --yellow: #f2c230;
+    --ink: #202936;
+    --muted: #3f3e3e;
+    --paper: #edf2f8;
     --white: #ffffff;
-    --rule: #d5dbe2;
+    --line: #dce2eb;
 
-    --font-display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
-    --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --font-display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+    --font-body: "Source Serif 4", Georgia, serif;
 
-    --measure: 46rem;
+    --measure: 48rem;
 }
 
 *,
@@ -21,227 +21,424 @@
 }
 
 html {
-    -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
 }
+
 
 body {
     margin: 0;
-    background: var(--paper);
+
+    /* Full-page background picture */
+    background-image:
+        linear-gradient(
+            rgba(12, 25, 48, 0.55),
+            rgba(12, 25, 48, 0.55)
+        ),
+        url("bago.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
     color: var(--ink);
     font-family: var(--font-body);
-    font-size: 1.125rem;
-    line-height: 1.7;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    
 }
 
-/* The page already separates areas with borders, so the
-   plain <hr> lines are hidden to avoid doubled-up rules. */
-hr {
-    display: none;
-}
 
-/* ---------- Header ---------- */
 
 header {
-    background: var(--court-blue);
+    position: relative;
+    padding: 4.5rem 1.5rem 2rem;
+    text-align: center;
     color: var(--white);
-    padding: 3.5rem 1.5rem 2.5rem;
-    border-bottom: 8px solid var(--line-yellow);
-}
 
-header > * {
-    max-width: var(--measure);
-    margin-left: auto;
-    margin-right: auto;
+    background:
+        linear-gradient(
+            rgba(12, 28, 58, 0.68),
+            rgba(12, 28, 58, 0.85)
+        ),
+        url("cave.jpg") center / cover no-repeat;
+
+    border-bottom: 5px solid var(--yellow);
 }
 
 header h1 {
-    margin-top: 0;
-    margin-bottom: 0.25rem;
+    max-width: 850px;
+    margin: 0 auto 0.8rem;
     font-family: var(--font-display);
+    font-size: clamp(2.8rem, 7vw, 5rem);
     font-weight: 700;
-    font-size: clamp(3.25rem, 11vw, 6rem);
-    line-height: 0.95;
-    letter-spacing: -0.01em;
+    line-height: 1;
+    letter-spacing: 0.01em;
 }
 
 header p {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-style: italic;
-    font-size: 1.2rem;
-    color: #dbe5f8;
+    margin: 0 auto 1.8rem;
+    color: #e0e7f3;
+    font-size: 1.05rem;
 }
 
-/* ---------- Navigation ---------- */
-
 nav {
-    background: var(--white);
-    border-bottom: 1px solid var(--rule);
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 0 0.5rem;
-    padding: 0 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 nav a {
+    display: inline-block;
+    padding: 0.55rem 1rem;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+
     font-family: var(--font-display);
+    font-size: 1.1rem;
     font-weight: 600;
-    font-size: 1.2rem;
-    letter-spacing: 0.03em;
-    color: var(--ink);
     text-decoration: none;
-    padding: 0.9rem 1rem 0.75rem;
-    border-bottom: 4px solid transparent;
-    transition: border-color 0.15s ease, color 0.15s ease;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
 }
 
 nav a:hover {
-    color: var(--court-blue);
-    border-bottom-color: var(--line-yellow);
+    color: var(--blue-dark);
+    background: var(--yellow);
+    border-color: var(--yellow);
+}
+
+/* ACTIVE NAV LINK HIGHLIGHT */
+nav a.active {
+    color: var(--blue-dark);
+    background: var(--yellow);
+    border-color: var(--yellow);
+    font-weight: 700;
 }
 
 nav a:focus-visible,
 a:focus-visible {
-    outline: 3px solid var(--court-blue);
-    outline-offset: 3px;
-    border-radius: 2px;
+    outline: 2px solid var(--yellow);
+    outline-offset: 4px;
 }
 
-/* ---------- Main content ---------- */
+hr {
+    display: none;
+}
+
+/* BANNER IMAGE */
+.banner {
+    display: block;
+    width: 100%;
+    height: 260px;
+    margin: 0;
+    object-fit: cover;
+}
 
 main {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
     padding: 3rem 1.5rem 4rem;
 }
 
+/* ACADEMIC SECTION */
 #about-academics {
     max-width: var(--measure);
     margin: 0 auto;
+    padding: 2.5rem;
+
     background: var(--white);
-    padding: 2.5rem 2.5rem 3rem;
-    border-top: 4px solid var(--court-blue);
-    box-shadow: 0 1px 0 var(--rule);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--blue);
+    border-radius: 4px;
+
+    box-shadow: 0 5px 18px rgba(18, 41, 92, 0.06);
 }
 
+
+#about-sports {
+    position: relative;
+    max-width: var(--measure);
+    min-height: 300px;
+    margin: 2rem auto 0;
+    padding: 2.5rem;
+    overflow: hidden;
+
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            rgba(12, 25, 48, 0.80),
+            rgba(12, 25, 48, 0.88)
+        ),
+        url("sports.jpg") center / cover no-repeat;
+
+    border-left: 5px solid var(--yellow);
+    border-radius: 4px;
+    box-shadow: 0 5px 18px rgba(18, 41, 92, 0.08);
+}
+
+#about-sports h2,
+#about-sports h3,
+#about-sports h4 {
+    color: var(--white);
+}
+
+#about-sports h2 {
+    border-bottom-color: var(--yellow);
+}
+
+#about-sports p {
+    color: #fdfdfd;
+    font-weight: 500;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+    font: size 1.1rem; 
+}
+
+#about-sports strong {
+    color: var(--yellow);
+}
+
+/* HEADINGS */
 h2,
 h3,
 h4 {
     font-family: var(--font-display);
     font-weight: 700;
-    line-height: 1.1;
-    color: var(--court-blue-dark);
+    line-height: 1.15;
 }
 
 h2 {
-    margin: 0 0 1.25rem;
-    font-size: clamp(2.25rem, 6vw, 3.25rem);
-    padding-bottom: 0.6rem;
-    border-bottom: 4px solid var(--line-yellow);
+    margin: 0 0 1.4rem;
+    padding-bottom: 0.7rem;
+    color: var(--blue-dark);
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    border-bottom: 3px solid var(--yellow);
 }
 
 h3 {
-    margin: 2.75rem 0 0.9rem;
-    font-size: 1.85rem;
+    margin: 2.2rem 0 0.8rem;
+    color: var(--blue);
+    font-size: 1.7rem;
 }
 
 h4 {
-    margin: 2.75rem 0 0.9rem;
-    font-size: 1.45rem;
+    margin: 1.8rem 0 0.7rem;
     color: var(--ink);
+    font-size: 1.3rem;
 }
 
+/* TEXT */
 p {
-    margin: 0 0 1.25rem;
     max-width: 68ch;
+    margin: 0 0 1.2rem;
 }
 
 strong {
-    font-weight: 600;
-    color: var(--court-blue-dark);
+    color: var(--blue-dark);
+    font-weight: 700;
 }
 
-/* ---------- Lists ---------- */
-
+/* LISTS */
 ul {
-    list-style: none;
     margin: 0 0 1.5rem;
     padding: 0;
+    list-style: none;
 }
 
 li {
-    padding: 0.9rem 0 0.9rem 1.25rem;
-    border-top: 1px solid var(--rule);
-    border-left: 4px solid var(--line-yellow);
-    margin-bottom: -1px;
+    margin: 0;
+    padding: 0.9rem 1.1rem;
+
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--yellow);
+
+    transition:
+        background-color 0.2s ease,
+        border-left-color 0.2s ease;
 }
 
-li:last-child {
-    border-bottom: 1px solid var(--rule);
+li + li {
+    border-top: none;
 }
 
-/* ---------- Closing statement ---------- */
+li:hover {
+    background: #f8faff;
+    border-left-color: var(--blue);
+}
+
+
+ul li a {
+    color: var(--blue);
+    font-weight: 700;
+    text-decoration: none;
+    text-underline-offset: 3px;
+}
+
+ul li a:hover {
+    color: #a87900;
+    text-decoration: underline;
+}
+
+
+#about-sports li {
+    color: var(--ink);
+    background: rgba(255, 255, 255, 0.96);
+    border-color: rgba(255, 255, 255, 0.2);
+    border-left-color: var(--yellow);
+}
+
 
 #about-academics > p:last-of-type {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     margin-bottom: 0;
-    padding-left: 1.25rem;
-    border-left: 4px solid var(--court-blue);
+    padding-left: 1rem;
+
+    color: var(--blue-dark);
+    border-left: 3px solid var(--yellow);
     font-style: italic;
-    font-size: 1.25rem;
-    color: var(--court-blue-dark);
 }
 
-/* ---------- Footer ---------- */
+
+table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    background: rgba(255,255,255, 0.93);
+    border: 1px solid var(--line);
+    box-shadow: 0 4px 14px rgba(18, 41, 92, 0.04);
+}
+
+thead {
+    color: var(--white);
+    background: var(--blue-dark);
+}
+
+th {
+    padding: 1rem;
+    color: var(--white);
+    background: var(--blue-dark);
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--line);
+}
+
+tbody tr:nth-child(even) {
+    background: #f3f6fb;
+}
+
+tbody tr:hover {
+    background: #e8eef8;
+}
+
 
 footer {
-    background: var(--court-blue-dark);
-    color: #c5d2ec;
+    padding: 1.5rem;
+    color: #d6dfef;
+    background: var(--blue-dark);
+    border-top: 4px solid var(--yellow);
     text-align: center;
-    padding: 1.75rem 1.5rem;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 footer p {
-    margin: 0 auto;
     max-width: none;
+    margin: 0 auto;
 }
 
-/* ---------- Small screens ---------- */
-
+/* MOBILE RESPONSIVENESS */
 @media (max-width: 600px) {
     body {
-        font-size: 1.05rem;
+        font-size: 1rem;
+        background-attachment: scroll;
     }
 
     header {
-        padding: 2.5rem 1.25rem 2rem;
+        padding: 3rem 1rem 1.5rem;
     }
 
-    main {
-        padding: 1.5rem 0 2.5rem;
+    header h1 {
+        font-size: clamp(2.5rem, 11vw, 3.5rem);
     }
 
-    #about-academics {
-        padding: 1.75rem 1.25rem 2.25rem;
+    header p {
+        font-size: 0.95rem;
     }
 
     nav {
-        justify-content: flex-start;
+        gap: 0.4rem;
     }
 
     nav a {
-        padding: 0.75rem 0.6rem 0.6rem;
-        font-size: 1.1rem;
+        padding: 0.5rem 0.7rem;
+        font-size: 1rem;
+    }
+
+    .banner {
+        height: 190px;
+    }
+
+    main {
+        padding: 1.5rem 1rem 2.5rem;
+    }
+
+    #about-academics,
+    #about-sports {
+        padding: 1.5rem;
+    }
+
+    #about-sports {
+        min-height: 250px;
+        margin-top: 1.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        margin-top: 1.8rem;
+        font-size: 1.5rem;
+    }
+
+    li {
+        padding: 0.8rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th,
+    td {
+        padding: 0.7rem;
     }
 }
+
 
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
     }
 
-    * {
+    *,
+    *::before,
+    *::after {
         transition: none !important;
     }
 }
