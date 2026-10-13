@@ -1,22 +1,5 @@
-:root {
-    --blue: #1b3f8b;
-    --blue-dark: #09233d;
-    --yellow: #f2c230;
-    --ink: #202936;
-    --muted: #3f3e3e;
-    --paper: #edf2f8;
-    --white: #ffffff;
-    --line: #dce2eb;
-
-    --font-display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
-    --font-body: "Source Serif 4", Georgia, serif;
-
-    --measure: 48rem;
-}
-
-*,
-*::before,
-*::after {
+::before,
+::after {
     box-sizing: border-box;
 }
 
@@ -25,15 +8,13 @@ html {
     scroll-padding-top: 1rem;
 }
 
-
 body {
     margin: 0;
 
-    /* Full-page background picture */
     background-image:
         linear-gradient(
-            rgba(12, 25, 48, 0.55),
-            rgba(12, 25, 48, 0.55)
+            rgba(190, 190, 209, 0.014),
+            rgba(247, 249, 252, 0.55)
         ),
         url("bago.jpg");
 
@@ -42,35 +23,36 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-    color: var(--ink);
-    font-family: var(--font-body);
+    color: rgb(2, 2, 3);
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1.05rem;
     line-height: 1.75;
-    
 }
-
-
 
 header {
     position: relative;
     padding: 4.5rem 1.5rem 2rem;
     text-align: center;
-    color: var(--white);
+    color: rgb(0, 0, 0);
+    body {
+   font-family: Arial, Helvetica, sans-serif;
+}
+
 
     background:
         linear-gradient(
-            rgba(12, 28, 58, 0.68),
-            rgba(12, 28, 58, 0.85)
+            rgb(243, 243, 248),
+            rgba(118, 132, 143, 0)
         ),
         url("cave.jpg") center / cover no-repeat;
 
-    border-bottom: 5px solid var(--yellow);
+    border-bottom: 5px solid rgba(242, 194, 48, 1);
 }
 
 header h1 {
     max-width: 850px;
     margin: 0 auto 0.8rem;
-    font-family: var(--font-display);
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
     font-size: clamp(2.8rem, 7vw, 5rem);
     font-weight: 700;
     line-height: 1;
@@ -79,9 +61,13 @@ header h1 {
 
 header p {
     margin: 0 auto 1.8rem;
-    color: #e0e7f3;
+    color: rgb(0, 0, 0);
     font-size: 1.05rem;
+    body {
+  font-family: Arial, Helvetica, sans-serif;
 }
+}
+
 
 nav {
     display: flex;
@@ -95,12 +81,12 @@ nav {
 nav a {
     display: inline-block;
     padding: 0.55rem 1rem;
-    color: var(--white);
-    background: rgba(255, 255, 255, 0.12);
+    color: rgb(14, 12, 12);
+    background: rgba(255, 255, 255, 0);
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 4px;
 
-    font-family: var(--font-display);
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
     text-decoration: none;
@@ -111,23 +97,20 @@ nav a {
         border-color 0.2s ease;
 }
 
-nav a:hover {
-    color: var(--blue-dark);
-    background: var(--yellow);
-    border-color: var(--yellow);
+nav a:hover,
+nav a.active {
+    color: rgba(9, 35, 61, 1);
+    background: rgba(242, 194, 48, 1);
+    border-color: rgba(242, 194, 48, 1);
 }
 
-/* ACTIVE NAV LINK HIGHLIGHT */
 nav a.active {
-    color: var(--blue-dark);
-    background: var(--yellow);
-    border-color: var(--yellow);
     font-weight: 700;
 }
 
 nav a:focus-visible,
 a:focus-visible {
-    outline: 2px solid var(--yellow);
+    outline: 2px solid rgba(242, 194, 48, 1);
     outline-offset: 4px;
 }
 
@@ -135,7 +118,6 @@ hr {
     display: none;
 }
 
-/* BANNER IMAGE */
 .banner {
     display: block;
     width: 100%;
@@ -144,22 +126,26 @@ hr {
     object-fit: cover;
 }
 
+
 main {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
     padding: 3rem 1.5rem 4rem;
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 }
 
-/* ACADEMIC SECTION */
+
 #about-academics {
-    max-width: var(--measure);
+    max-width: 900px;
     margin: 0 auto;
     padding: 2.5rem;
 
-    background: var(--white);
-    border: 1px solid var(--line);
-    border-top: 4px solid var(--blue);
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(220, 226, 235, 1);
+    border-top: 4px solid rgba(27, 63, 139, 1);
     border-radius: 4px;
 
     box-shadow: 0 5px 18px rgba(18, 41, 92, 0.06);
@@ -168,13 +154,13 @@ main {
 
 #about-sports {
     position: relative;
-    max-width: var(--measure);
+    max-width: 900px;
     min-height: 300px;
     margin: 2rem auto 0;
     padding: 2.5rem;
     overflow: hidden;
 
-    color: var(--white);
+    color: rgba(255, 255, 255, 1);
 
     background:
         linear-gradient(
@@ -183,37 +169,38 @@ main {
         ),
         url("sports.jpg") center / cover no-repeat;
 
-    border-left: 5px solid var(--yellow);
+    border-left: 5px solid rgba(242, 194, 48, 1);
     border-radius: 4px;
+
     box-shadow: 0 5px 18px rgba(18, 41, 92, 0.08);
 }
 
 #about-sports h2,
 #about-sports h3,
 #about-sports h4 {
-    color: var(--white);
+    color: rgba(255, 255, 255, 1);
 }
 
 #about-sports h2 {
-    border-bottom-color: var(--yellow);
+    border-bottom-color: rgba(242, 194, 48, 1);
 }
 
 #about-sports p {
-    color: #fdfdfd;
+    color: rgba(255, 255, 255, 1);
     font-weight: 500;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
-    font: size 1.1rem; 
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    font-size: 1.1rem;
 }
 
 #about-sports strong {
-    color: var(--yellow);
+    color: rgba(242, 194, 48, 1);
 }
 
-/* HEADINGS */
+
 h2,
 h3,
 h4 {
-    font-family: var(--font-display);
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
     font-weight: 700;
     line-height: 1.15;
 }
@@ -221,35 +208,35 @@ h4 {
 h2 {
     margin: 0 0 1.4rem;
     padding-bottom: 0.7rem;
-    color: var(--blue-dark);
+    color: rgba(9, 35, 61, 1);
     font-size: clamp(2rem, 5vw, 2.8rem);
-    border-bottom: 3px solid var(--yellow);
+    border-bottom: 3px solid rgba(242, 194, 48, 1);
 }
 
 h3 {
     margin: 2.2rem 0 0.8rem;
-    color: var(--blue);
+    color: rgba(27, 63, 139, 1);
     font-size: 1.7rem;
 }
 
 h4 {
     margin: 1.8rem 0 0.7rem;
-    color: var(--ink);
+    color: rgba(32, 41, 54, 1);
     font-size: 1.3rem;
 }
 
-/* TEXT */
+
 p {
     max-width: 68ch;
     margin: 0 0 1.2rem;
 }
 
 strong {
-    color: var(--blue-dark);
+    color: rgba(9, 35, 61, 1);
     font-weight: 700;
 }
 
-/* LISTS */
+
 ul {
     margin: 0 0 1.5rem;
     padding: 0;
@@ -260,9 +247,9 @@ li {
     margin: 0;
     padding: 0.9rem 1.1rem;
 
-    background: var(--white);
-    border: 1px solid var(--line);
-    border-left: 3px solid var(--yellow);
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(220, 226, 235, 1);
+    border-left: 3px solid rgba(242, 194, 48, 1);
 
     transition:
         background-color 0.2s ease,
@@ -274,29 +261,27 @@ li + li {
 }
 
 li:hover {
-    background: #f8faff;
-    border-left-color: var(--blue);
+    background: rgba(248, 250, 255, 1);
+    border-left-color: rgba(27, 63, 139, 1);
 }
 
-
 ul li a {
-    color: var(--blue);
+    color: rgba(27, 63, 139, 1);
     font-weight: 700;
     text-decoration: none;
     text-underline-offset: 3px;
 }
 
 ul li a:hover {
-    color: #a87900;
+    color: rgba(168, 121, 0, 1);
     text-decoration: underline;
 }
 
-
 #about-sports li {
-    color: var(--ink);
+    color: rgba(32, 41, 54, 1);
     background: rgba(255, 255, 255, 0.96);
     border-color: rgba(255, 255, 255, 0.2);
-    border-left-color: var(--yellow);
+    border-left-color: rgba(242, 194, 48, 1);
 }
 
 
@@ -305,8 +290,8 @@ ul li a:hover {
     margin-bottom: 0;
     padding-left: 1rem;
 
-    color: var(--blue-dark);
-    border-left: 3px solid var(--yellow);
+    color: rgb(13, 16, 19);
+    border-left: 3px solid rgba(242, 194, 48, 1);
     font-style: italic;
 }
 
@@ -315,43 +300,42 @@ table {
     width: 100%;
     margin: 1.5rem 0;
     border-collapse: collapse;
-    background: rgba(255,255,255, 0.93);
-    border: 1px solid var(--line);
+    background: rgba(245, 243, 243, 0.93);
+    border: 1px solid rgb(112, 121, 134);
     box-shadow: 0 4px 14px rgba(18, 41, 92, 0.04);
 }
 
 thead {
-    color: var(--white);
-    background: var(--blue-dark);
+    color: rgba(255, 255, 255, 1);
+    background: rgba(9, 35, 61, 1);
 }
 
 th {
     padding: 1rem;
-    color: var(--white);
-    background: var(--blue-dark);
+    color: rgba(255, 255, 255, 1);
+    background: rgba(9, 35, 61, 1);
     text-align: left;
     font-weight: 600;
 }
 
 td {
     padding: 1rem;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid rgba(220, 226, 235, 1);
 }
 
 tbody tr:nth-child(even) {
-    background: #f3f6fb;
+    background: rgba(243, 246, 251, 1);
 }
 
 tbody tr:hover {
-    background: #e8eef8;
+    background: rgba(232, 238, 248, 1);
 }
-
 
 footer {
     padding: 1.5rem;
-    color: #d6dfef;
-    background: var(--blue-dark);
-    border-top: 4px solid var(--yellow);
+    color: rgba(214, 223, 239, 1);
+    background: rgb(105, 124, 143);
+    border-top: 4px solid rgba(242, 194, 48, 1);
     text-align: center;
     font-size: 0.9rem;
 }
@@ -361,7 +345,7 @@ footer p {
     margin: 0 auto;
 }
 
-/* MOBILE RESPONSIVENESS */
+
 @media (max-width: 600px) {
     body {
         font-size: 1rem;
@@ -430,15 +414,14 @@ footer p {
     }
 }
 
-
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
     }
 
-    *,
-    *::before,
-    *::after {
+    
+    ::before,
+    ::after {
         transition: none !important;
     }
 }
