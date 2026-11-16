@@ -4,19 +4,22 @@
     <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sports</title>
+    <title>Sports &amp; Athletics - Student Portal</title>
 </head>
 <body>
-    <header>
-        <nav>
 
-            <a href="home.html">Home</a> | 
-            <a href="profile.html">About Us</a> | 
-            <a href="academics.html">Academics</a> | 
-            <a href="sports.html">Sports</a> 
+    <header>
+        <h1>Sports &amp; Athletics</h1>
+        <p>Building Teamwork, Endurance, and Athletic Discipline</p>
+
+        <nav>
+            <a href="home.html">HOME</a>
+            <a href="profile.html">About Us</a>
+            <a href="academics.html">Academics</a>
+            <a href="sports.html" class="active">Sports</a>
+            <a href="register.html">Register/Login</a>
+           <a href="#" id="darkModeToggle">🌙 Dark Mode</a>
         </nav>
-        <h1>Sports & Athletics</h1>
-        
     </header>
 
     <main>
@@ -28,16 +31,25 @@
         </section>
 
         <section id="favorite-sports">
-            <h2>Sports & Activities</h2>
-            <ul>
-                <li><strong>Basketball:</strong> Improves agility, tactical thinking, and teamwork.</li>
-                <li><strong>Running & Athletics:</strong> Builds endurance, mental resilience, and cardio health.</li>
-                <li><strong>Football / Soccer:</strong> Enhances coordination, strategy, and endurance.</li>
+            <h2>Sports &amp; Activities</h2>
+            <ul class="portal-grid">
+                <li class="portal-card">
+                    <strong>Basketball</strong>
+                    <p>Improves agility, tactical thinking, and teamwork.</p>
+                </li>
+                <li class="portal-card">
+                    <strong>Running &amp; Athletics</strong>
+                    <p>Builds endurance, mental resilience, and cardio health.</p>
+                </li>
+                <li class="portal-card">
+                    <strong>Football / Soccer</strong>
+                    <p>Enhances coordination, strategy, and endurance.</p>
+                </li>
             </ul>
         </section>
 
         <section id="achievements">
-            <h2>Sports Achievements & Schedule</h2>
+            <h2>Sports Achievements &amp; Schedule</h2>
             <table>
                 <thead>
                     <tr>
@@ -55,7 +67,7 @@
                         <td>Completed</td>
                     </tr>
                     <tr>
-                        <td>Track & Field</td>
+                        <td>Track &amp; Field</td>
                         <td>Runner (100m)</td>
                         <td>Annual Sports Meet</td>
                         <td>Upcoming</td>
@@ -66,7 +78,9 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Sports Portfolio. All rights reserved.</p>
+        <p>&copy; 2026 Student Portal. All rights reserved.</p>
     </footer>
+
+    <script src="index.js"></script>
 </body>
 </html>

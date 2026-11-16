@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Student Portal</title>
-
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
 
     <header>
         <h1>Welcome to Sports Hub's Student Portal</h1>
         <p>Integrating Academic Excellence and Athletic Growth</p>
+        
+        <nav>
+            <a href="home.html" class="active">HOME</a>
+            <a href="profile.html">About Us</a>
+            <a href="academics.html">Academics</a>
+            <a href="sports.html">Sports</a>
+            <a href="register.html">Register/Login</a>
+            <a href="index.js" id="darkModeToggle">🌙 Dark Mode</a>
+        </nav>
     </header>
-
-    <hr>
-
-    <nav>
-        <a href="home.html">HOME</a> | 
-        <a href="profile.html">About Us</a> | 
-        <a href="academics.html">Academics</a> | 
-        <a href="sports.html">Sports</a> | 
-        <a href="register.html">Register/Login</a> | 
-    </nav>
-
-    <hr>
 
     <main>
         <section id="welcome">
@@ -37,11 +34,24 @@
 
         <section id="quick-links">
             <h2>Explore the Portal</h2>
-            <ul>
-                <li><strong><a href="profile.html">Profile Page:</a></strong> View personal information, background details, and bio.</li>
-                <li><strong><a href="academics.html">Academics:</a></strong> Explore active courses, grade history, study hours, and academic benefits.</li>
-                <li><strong><a href="sports.html">Sports & Athletics:</a></strong> Check athletic commitments, match schedules, and physical training stats.</li>
-                <li><strong><a href="register.html">Student Registration:</a></strong> Sign up or update student-athlete credentials for the upcoming term.</li>
+            <!-- Using portal-grid class to match your CSS card grid -->
+            <ul class="portal-grid">
+                <li class="portal-card">
+                    <a href="profile.html">Profile Page</a>
+                    View personal information, background details, and bio.
+                </li>
+                <li class="portal-card">
+                    <a href="academics.html">Academics</a>
+                    Explore active courses, grade history, study hours, and academic benefits.
+                </li>
+                <li class="portal-card">
+                    <a href="sports.html">Sports & Athletics</a>
+                    Check athletic commitments, match schedules, and physical training stats.
+                </li>
+                <li class="portal-card">
+                    <a href="register.html">Student Registration</a>
+                    Sign up or update student-athlete credentials for the upcoming term.
+                </li>
             </ul>
         </section>
 
@@ -62,7 +72,7 @@
                         <td>Midterm examination schedule has been officially published.</td>
                     </tr>
                     <tr>
-                        <td>2029-9-26</td>
+                        <td>2026-09-26</td>
                         <td>Sports</td>
                         <td>Inter-school basketball tournament registrations close this Friday.</td>
                     </tr>
@@ -70,8 +80,6 @@
             </table>
         </section>
     </main>
-
-    <hr>
 
     <footer>
         <p>&copy; 2026 Student Portal. All rights reserved.</p>

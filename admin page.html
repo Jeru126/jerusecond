@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Student Portal</title>
+    <link rel="stylesheet" href="/index.css">
+    <style>
+        table { border-collapse: collapse; width: 100%; margin-bottom: 30px; }
+        th, td { border: 1px solid #999; padding: 6px 10px; text-align: left; }
+        .fail { color: red; }
+        .ok { color: green; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <nav>
+            <a href="/home.html">Home</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Registered Users (<span id="user-count">0</span>)</h2>
+        <table>
+            <thead>
+                <tr><th>ID</th><th>Full Name</th><th>Student ID</th><th>Email</th><th>Role</th><th>Registered</th></tr>
+            </thead>
+            <tbody id="users-body"></tbody>
+        </table>
+
+        <h2>Login History</h2>
+        <table>
+            <thead>
+                <tr><th>When</th><th>Name</th><th>Typed Username/Email</th><th>Result</th><th>IP</th></tr>
+            </thead>
+            <tbody id="logins-body"></tbody>
+        </table>
+    </main>
+
+    <script>
+        function esc(s) {
+            const d = document.createElement('div');
+            d.textContent = s ?? '';
+            return d.innerHTML;
+        }
+
+        async function load() {
+            const users = await (await fetch('/api/admin/users')).json();
+            document.getElementById('user-count').textContent = users.length;
+            document.getElementById('users-body').innerHTML = users.map(u => `
+                <tr>
+                    <td>${u.id}</td>
+                    <td>${esc(u.fullname)}</td>
+                    <td>${esc(u.student_id)}</td>
+                    <td>${esc(u.email)}</td>
+                    <td>${u.role}</td>
+                    <td>${new Date(u.created_at).toLocaleString()}</td>
+                </tr>`).join('');
+
+            const logins = await (await fetch('/api/admin/logins')).json();
+            document.getElementById('logins-body').innerHTML = logins.map(l => `
+                <tr>
+                    <td>${new Date(l.logged_at).toLocaleString()}</td>
+                    <td>${esc(l.fullname) || '-'}</td>
+                    <td>${esc(l.attempted_username)}</td>
+                    <td class="${l.success ? 'ok' : 'fail'}">${l.success ? 'Success' : 'Failed'}</td>
+                    <td>${esc(l.ip_address)}</td>
+                </tr>`).join('');
+        }
+        load();
+    </script>
+</body>
+</html>

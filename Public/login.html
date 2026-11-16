@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Student Portal</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome Back</h1>
+        <p>Please log in to access your Student Portal account</p>
+
+        <nav>
+            <a href="home.html">HOME</a>
+            <a href="profile.html">About Us</a>
+            <a href="academics.html">Academics</a>
+            <a href="sports.html">Sports</a>
+            <a href="login.html" class="active">Register/Login</a>
+            <a href="#" id="darkModeToggle">🌙 Dark Mode</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-card">
+            <h2>Account Login</h2>
+            <p>Enter your credentials below to continue.</p>
+
+            <form action="/login" method="POST" class="portal-form">
+                <div class="form-group">
+                    <label for="username">Email or Student ID</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your email or student ID" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+
+                <div class="button-row">
+                    <button type="submit" class="portal-btn">Log In</button>
+                    <button type="reset" class="portal-btn secondary">Clear</button>
+                </div>
+            </form>
+
+            <p class="auth-switch">
+                Don't have an account? <a href="register.html">Register here</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Student Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
